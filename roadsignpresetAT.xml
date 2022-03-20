@@ -75,7 +75,8 @@ roadsigns plugin preset file for Austria
         <tag key="access" value="" ident="mode"/>
     </sign>
 
-    <sign ref="AT:53.26" name="Bicycle road" de.name="Fahrradstraße">
+    <sign ref="AT:53.26" name="Bicycle road" de.name="Fahrradstraße"
+        de.wiki="DE:Key:bicycle_road#Situation_in_.C3.96sterreich">
         <tag key="bicycle_road" value="yes"/>
         <tag key="bicycle" value="designated"/>
         <tag key="maxspeed" value="30"/>
@@ -131,7 +132,6 @@ roadsigns plugin preset file for Austria
             de.wiki="DE:Key:motorcar">
         <tag key="motorcar" value="no" ident="mode"/>
         <supplementary id="Zustatztafel_ausgenommen_Anrainerverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_Radfahrer"/>
         <supplementary id="Zustatztafel_ausgenommen_Linienbusse"/>
         <supplementary id="Zustatztafel_ausgenommen_Taxi"/>
         <supplementary id="Zustatztafel_ausgenommen_Lieferverkehr"/>
@@ -144,9 +144,6 @@ roadsigns plugin preset file for Austria
             de.wiki="DE:Key:hgv">
         <tag key="hgv" value="no" ident="mode"/>
         <supplementary id="Zustatztafel_ausgenommen_Anrainerverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_Radfahrer"/>
-        <supplementary id="Zustatztafel_ausgenommen_Linienbusse"/>
-        <supplementary id="Zustatztafel_ausgenommen_Taxi"/>
         <supplementary id="Zustatztafel_ausgenommen_Lieferverkehr"/>
         <supplementary id="Zustatztafel_ausgenommen_landwirtschaftlicher_Verkehr"/>
         <supplementary id="Zustatztafel_ausgenommen_forstwirtschaftlicher_Verkehr"/>
@@ -190,7 +187,6 @@ roadsigns plugin preset file for Austria
         de.long_name="Verbot für Krafträder, auch mit Beiwagen, Kleinkrafträder und Mofas sowie für Kraftwagen und sonstige mehrspurige Kraftfahrzeuge">
         <tag key="motor_vehicle" value="no" ident="mode"/>
         <supplementary id="Zustatztafel_ausgenommen_Anrainerverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_Radfahrer"/>
         <supplementary id="Zustatztafel_ausgenommen_Linienbusse"/>
         <supplementary id="Zustatztafel_ausgenommen_Taxi"/>
         <supplementary id="Zustatztafel_ausgenommen_Lieferverkehr"/>
