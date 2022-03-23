@@ -91,22 +91,24 @@ roadsigns plugin preset file for Austria
         <tag key="vehicle" value="destination" />
         <tag key="bicycle" value="yes" />
         <tag key="maxspeed" value="walk" />
+        <tag key="source:maxspeed" value="AT:Wohnstraße"/>
     </sign>
     
-    <sign ref="AT:53.9e[$val]" icon="AT_53_9e" name="Traffic calming zone" de.name="Begegnungszone"
+    <sign ref="AT:53.9e[$val]" icon="AT_53_9e" name="Traffic calming zone" de.name="Begegnungszone"    
             wiki="Tag:highway%3Dliving_street"
             de.wiki="DE:Tag:highway%3Dliving_street#Begegnungszonen">
         <tag key="highway" value="living_street"/>
         <tag key="vehicle" value="yes" />
         <tag key="maxspeed" value="$val" />
+        <tag key="source:maxspeed" value="AT:Begegnungszone:$val"/>
         <parameter ident="val" input="textfield" suffix="km/h" default="20" field_width="2"/>
     </sign>
 
-    <sign id="oneway" ref="AT:53.10" traffic_sign_tag="" icon="AT_53_10" name="One-way road" de.name="Einbahnstraße"
+    <!--<sign id="oneway" ref="AT:53.10" traffic_sign_tag="" icon="AT_53_10" name="One-way road" de.name="Einbahnstraße"
             wiki="Key:oneway"
             de.wiki="DE:Key:oneway">
         <tag key="oneway" value="yes"/>
-    </sign>
+    </sign>-->
 
     <sign ref="AT:52.19[$val]" icon="AT_52_19" name="Minimum speed limit" de.name="Vorgeschriebene Mindestgeschwindigkeit"
             wiki="Key:minspeed">
@@ -167,11 +169,14 @@ roadsigns plugin preset file for Austria
             wiki="Key:bicycle"
             de.wiki="DE:Key:access">
         <tag key="bicycle" value="no" ident="mode"/>
+        <supplementary id="Zustatztafel_ausgenommen_Anrainerverkehr"/>
+        <supplementary id="Zustatztafel_ausgenommen_Lieferverkehr"/>
     </sign>
 
     <sign ref="AT:52.6b" name="Motorcycles prohibited" de.name="Verbot für Krafträder">
         <tag key="motorcycle" value="no" ident="mode"/>
         <supplementary id="Zustatztafel_ausgenommen_Anrainerverkehr"/>
+        <supplementary id="Zustatztafel_ausgenommen_Lieferverkehr"/>
     </sign>
 
     <sign ref="AT:52.14a" name="Horses prohibited" de.name="Verbot für Reiter">
@@ -232,11 +237,13 @@ roadsigns plugin preset file for Austria
         <parameter ident="val" type="int" input="combo" editable="yes" text="speed-limit" de.text="Höchstgeschwindigkeit" suffix="km/h" values="5,10,20,30,40,50,60,70,80,90,100,110,120,130" default="30" field_width="3"/>
         <supplementary id="AT:54.f"/>
         <supplementary id="AT:54.g"/>
+        <supplementary id="Zusatztafel_conditional"/>
+        <supplementary id="Zusatztafel_hgv_conditional"/>
     </sign>
 
     <sign ref="AT:52.11a[$val]" icon="AT_52_11a" name="Speed limit zone" de.name="Zone mit zulässiger Höchstgeschwindigkeit">
         <tag key="maxspeed" value="$val"/>
-        <tag key="zone:maxspeed" value="AT:$val"/>
+        <tag key="source:maxspeed" value="AT:zone:$val"/>
         <parameter ident="val" type="int" input="combo" editable="yes" text="speed-limit" de.text="Höchstgeschwindigkeit" suffix="km/h" values="20,30" default="30" field_width="2"/>
     </sign>
 
@@ -280,10 +287,28 @@ Positive Werte stehen für einen Anstieg in Richtung des ways und negative Werte
     </sign>
 
     <sign ref="AT:54.f" supplementary="yes" name="In case of snow or ice" de.name="Bei Schneelage oder Eisbildung">
-        <tag tag_ref="restriction" condition="snow"/>
+        <tag tag_ref="restriction" condition="conditional"/>
+        <tag tag_ref="restriction" append_value="$val @ (snow)"/>
     </sign>
 
     <sign ref="AT:54.g" supplementary="yes" name="When the road is wet" de.name="Bei nasser Fahrbahn">
-        <tag tag_ref="restriction" condition="wet"/>
+        <tag tag_ref="restriction" condition="conditional"/>
+        <tag tag_ref="restriction" append_value="$val @ (wet)"/>
+    </sign>
+
+    <sign ref="Zusatztafel_hgv_conditional" supplementary="yes" name="conditional hgv restriction" de.name="Bedingte LKW Beschränkung"
+        wiki="Conditional_restrictions"
+        de.wiki="DE:Conditional_restrictions">
+        <tag tag_ref="restriction" condition="hgv:conditional"/>
+        <tag tag_ref="restriction" append_value="$val @ ($hgv_condition)"/>        
+        <parameter input="textfield" name="hgv_conditional" de.name="hgv_conditional" type="text" ident="hgv_condition" default="weight>7.5 AND 22:00-05:00" suffix="" field_width="20"/>
+    </sign>
+
+    <sign ref="Zusatztafel_conditional" supplementary="yes" name="conditional restriction" de.name="Bedingte Beschränkung"
+        wiki="Conditional_restrictions"
+        de.wiki="DE:Conditional_restrictions">
+        <tag tag_ref="restriction" condition="conditional"/>
+        <tag tag_ref="restriction" append_value="$val @ ($condition)"/>        
+        <parameter input="textfield" name="conditional" de.name="conditional" type="text" ident="condition" default="Mo-Sa 05:00-22:00;PH off" suffix="" field_width="20"/>
     </sign>
 </roadsignpreset>
