@@ -10,24 +10,31 @@ roadsigns plugin preset file for Austria
         <tag key="highway" value="cycleway"/>
         <tag key="bicycle" value="designated"/>
         <tag key="access" value="" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
-    <sign ref="AT:52.27" name="Bicycle path without mandatory use" de.name="Radweg ohne Benutzungspflicht">
+    <sign ref="AT:52.27" name="Bicycle path without mandatory use" de.name="Radweg ohne Benutzungspflicht"
+        help="Differs from bicycle paths WITH mandatory use by the lack of restrictions on the corresponding roads, see:"
+        de.help="Unterscheidet sich von Radwegen MIT Benutzungspflicht durch die fehlende Einschränkung an den entsprechenden Straßen, siehe:"
+        wiki="Tag:bicycle%3Duse_sidepath">
         <tag key="highway" value="cycleway"/>
         <tag key="bicycle" value="designated"/>
         <tag key="access" value="" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.17b" name="Bridle path" de.name="Reitweg">
         <tag key="highway" value="bridleway"/>
         <tag key="horse" value="designated"/>
         <tag key="access" value="" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.17" name="Pedestrian path" de.name="Gehweg">
         <tag key="highway" value="footway"/>
         <tag key="foot" value="designated"/>
         <tag key="access" value="" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.17a-a" name="Pedestrian &amp; bicycle path with mandatory use" de.name="Gemeinsamer Geh- und Radweg mit Benutzungspflicht"
@@ -39,14 +46,19 @@ roadsigns plugin preset file for Austria
         <tag key="bicycle" value="designated"/>
         <tag key="segregated" value="no"/>
         <tag key="access" value="" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
-    <sign ref="AT:52.28a" name="Pedestrian &amp; bicycle path without mandatory use" de.name="Gemeinsamer Geh- und Radweg ohne Benutzungspflicht">
+    <sign ref="AT:52.28a" name="Pedestrian &amp; bicycle path without mandatory use" de.name="Gemeinsamer Geh- und Radweg ohne Benutzungspflicht"
+        help="Differs from pedestrian &amp; bicycle paths WITH mandatory use by the lack of restrictions on the corresponding roads, see:"
+        de.help="Unterscheidet sich von Geh- und Radwegen MIT Benutzungspflicht durch die fehlende Einschränkung an den entsprechenden Straßen, siehe:"
+        wiki="Tag:bicycle%3Duse_sidepath">
         <tag key="highway" value="path"/>
         <tag key="foot" value="designated"/>
         <tag key="bicycle" value="designated"/>
         <tag key="segregated" value="no"/>
         <tag key="access" value="" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.17a-b" name="Split pedestrian &amp; bicycle path with mandatory use" de.name="Getrennter Rad- und Gehweg mit Benutzungspflicht"
@@ -58,21 +70,19 @@ roadsigns plugin preset file for Austria
         <tag key="bicycle" value="designated"/>
         <tag key="segregated" value="yes"/>
         <tag key="access" value="" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
-    <sign ref="AT:52.28b" name="Split pedestrian &amp; bicycle path without mandatory use" de.name="Getrennter Rad- und Gehweg ohne Benutzungspflicht">
+    <sign ref="AT:52.28b" name="Split pedestrian &amp; bicycle path without mandatory use" de.name="Getrennter Rad- und Gehweg ohne Benutzungspflicht"
+        help="Differs from split pedestrian &amp; bicycle paths WITH mandatory use by the lack of restrictions on the corresponding roads, see:"
+        de.help="Unterscheidet sich von getrennten Geh- und Radwegen MIT Benutzungspflicht durch die fehlende Einschränkung an den entsprechenden Straßen, siehe:"
+        wiki="Tag:bicycle%3Duse_sidepath">
         <tag key="highway" value="path"/>
         <tag key="foot" value="designated"/>
         <tag key="bicycle" value="designated"/>
         <tag key="segregated" value="yes"/>
         <tag key="access" value="" ident="mode"/>
-    </sign>
-
-    <sign ref="AT:53.9a" name="Pedestrian zone" de.name="Fußgängerzone"
-            wiki="Tag:highway%3Dpedestrian"
-            de.wiki="DE:Tag:highway%3Dpedestrian">
-        <tag key="highway" value="pedestrian"/>
-        <tag key="access" value="" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:53.26" name="Bicycle road" de.name="Fahrradstraße"
@@ -82,6 +92,26 @@ roadsigns plugin preset file for Austria
         <tag key="maxspeed" value="30"/>
         <tag key="source:maxspeed" value="AT:bicycle_road"/>
         <tag key="vehicle" value="destination" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
+    </sign>
+
+    <sign ref="AT:53.9a" name="Pedestrian zone" de.name="Fußgängerzone"
+            wiki="Tag:highway%3Dpedestrian"
+            de.wiki="DE:Tag:highway%3Dpedestrian">
+        <tag key="highway" value="pedestrian"/>
+        <tag key="access" value="" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
+    </sign>
+
+    <sign ref="AT:53.26a" icon="AT_53_26a" name="School zone" de.name="Schulstraße"    
+            wiki="Tag:highway%3Dliving_street"
+            de.wiki="DE:Tag:highway%3Dliving_street#Schulstraßen">
+        <tag key="highway" value="living_street"/>
+        <tag key="motor_vehicle" value="yes" />
+        <tag key="motor_vehicle:conditional" value="private @ ($condition)" />
+        <tag key="maxspeed:conditional" value="walk @ ($condition)" />
+        <parameter input="textfield" name="conditional" de.name="conditional" type="text" ident="condition" default="Mo-Fr 07:00-09:00, 11:30-13:00; PH off; SH off" suffix="" field_width="20"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:53.9c" icon="AT_53_9c" name="Home zone" de.name="Wohnstraße"
@@ -92,6 +122,7 @@ roadsigns plugin preset file for Austria
         <tag key="bicycle" value="yes" />
         <tag key="maxspeed" value="walk" />
         <tag key="source:maxspeed" value="AT:Wohnstraße"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
     
     <sign ref="AT:53.9e[$val]" icon="AT_53_9e" name="Traffic calming zone" de.name="Begegnungszone"    
@@ -102,29 +133,28 @@ roadsigns plugin preset file for Austria
         <tag key="maxspeed" value="$val" />
         <tag key="source:maxspeed" value="AT:Begegnungszone:$val"/>
         <parameter ident="val" input="textfield" suffix="km/h" default="20" field_width="2"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
+    
 
-    <!--<sign id="oneway" ref="AT:53.10" traffic_sign_tag="" icon="AT_53_10" name="One-way road" de.name="Einbahnstraße"
-            wiki="Key:oneway"
-            de.wiki="DE:Key:oneway">
-        <tag key="oneway" value="yes"/>
-    </sign>-->
 
     <sign ref="AT:52.19[$val]" icon="AT_52_19" name="Minimum speed limit" de.name="Vorgeschriebene Mindestgeschwindigkeit"
             wiki="Key:minspeed">
         <tag key="minspeed" value="$val"/>
         <parameter ident="val" input="textfield" suffix="km/h" default="30" field_width="2"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.1" name="All vehicles prohibited" de.name="Verbot für Fahrzeuge aller Art">
         <tag key="vehicle" value="no" ident="mode"/>
-        <supplementary id="Zustatztafel_ausgenommen_Anrainerverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_Radfahrer"/>
-        <supplementary id="Zustatztafel_ausgenommen_Linienbusse"/>
-        <supplementary id="Zustatztafel_ausgenommen_Taxi"/>
-        <supplementary id="Zustatztafel_ausgenommen_Lieferverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_landwirtschaftlicher_Verkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_forstwirtschaftlicher_Verkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_Anrainerverkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_Radfahrer"/>
+        <supplementary id="Zusatztafel_ausgenommen_Linienbusse"/>
+        <supplementary id="Zusatztafel_ausgenommen_Taxi"/>
+        <supplementary id="Zusatztafel_ausgenommen_Lieferverkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_landwirtschaftlicher_Verkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_forstwirtschaftlicher_Verkehr"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.6a" name="Motorcars prohibited" de.name="Verbot für Kraftwagen"
@@ -133,28 +163,31 @@ roadsigns plugin preset file for Austria
             wiki="Key:motorcar"
             de.wiki="DE:Key:motorcar">
         <tag key="motorcar" value="no" ident="mode"/>
-        <supplementary id="Zustatztafel_ausgenommen_Anrainerverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_Linienbusse"/>
-        <supplementary id="Zustatztafel_ausgenommen_Taxi"/>
-        <supplementary id="Zustatztafel_ausgenommen_Lieferverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_landwirtschaftlicher_Verkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_forstwirtschaftlicher_Verkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_Anrainerverkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_Linienbusse"/>
+        <supplementary id="Zusatztafel_ausgenommen_Taxi"/>
+        <supplementary id="Zusatztafel_ausgenommen_Lieferverkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_landwirtschaftlicher_Verkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_forstwirtschaftlicher_Verkehr"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.7a-1" name="Heavy goods vehicles prohibited" de.name="Verbot für LKW"
             wiki="Key:hgv"
             de.wiki="DE:Key:hgv">
         <tag key="hgv" value="no" ident="mode"/>
-        <supplementary id="Zustatztafel_ausgenommen_Anrainerverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_Lieferverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_landwirtschaftlicher_Verkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_forstwirtschaftlicher_Verkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_Anrainerverkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_Lieferverkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_landwirtschaftlicher_Verkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_forstwirtschaftlicher_Verkehr"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.7a-2[$val]" icon="AT_52_7a-2" name="Heavy goods vehicles with a max allowed weight above the specified weight prohibited" de.name="Verbot für LKW mit höchst zulässigem Gesamtgewicht über angegebenem Gewicht"
         wiki="Key:maxweightrating">
         <tag key="maxweightrating:hgv" value="$val"/>
         <parameter input="textfield" name="max. allowed weight" de.name="höchst zulässiges Gesamtgewicht" type="float" ident="val" default="5.5" suffix="t" field_width="3"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.7a-3[$val]" icon="AT_52_7a-3" name="Heavy goods vehicles exceeding specified length prohibited" de.name="Verbot für LKW über angegebener Länge"
@@ -162,6 +195,7 @@ roadsigns plugin preset file for Austria
         de.wiki="DE:Key:maxlength">
         <tag key="maxlength" value="$val"/>
         <parameter input="textfield" name="max. length" de.name="Maximale Länge" type="float" ident="val" default="10" suffix="m" field_width="3"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
 
@@ -169,58 +203,67 @@ roadsigns plugin preset file for Austria
             wiki="Key:bicycle"
             de.wiki="DE:Key:access">
         <tag key="bicycle" value="no" ident="mode"/>
-        <supplementary id="Zustatztafel_ausgenommen_Anrainerverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_Lieferverkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_Anrainerverkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_Lieferverkehr"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.6b" name="Motorcycles prohibited" de.name="Verbot für Krafträder">
         <tag key="motorcycle" value="no" ident="mode"/>
-        <supplementary id="Zustatztafel_ausgenommen_Anrainerverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_Lieferverkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_Anrainerverkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_Lieferverkehr"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.14a" name="Horses prohibited" de.name="Verbot für Reiter">
         <tag key="horse" value="no" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.14b" name="Pedestrians prohibited" de.name="Verbot für Fußgänger">
         <tag key="foot" value="no" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.6c" name="Motor vehicles prohibited" de.name="Verbot für Kraftfahrzeuge"
         long_name="Motorcycles, also with sidecar, mopeds, mofas as well as motorcars and other multi-track motorized vehicles prohibited"
         de.long_name="Verbot für Krafträder, auch mit Beiwagen, Kleinkrafträder und Mofas sowie für Kraftwagen und sonstige mehrspurige Kraftfahrzeuge">
         <tag key="motor_vehicle" value="no" ident="mode"/>
-        <supplementary id="Zustatztafel_ausgenommen_Anrainerverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_Linienbusse"/>
-        <supplementary id="Zustatztafel_ausgenommen_Taxi"/>
-        <supplementary id="Zustatztafel_ausgenommen_Lieferverkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_landwirtschaftlicher_Verkehr"/>
-        <supplementary id="Zustatztafel_ausgenommen_forstwirtschaftlicher_Verkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_Anrainerverkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_Linienbusse"/>
+        <supplementary id="Zusatztafel_ausgenommen_Taxi"/>
+        <supplementary id="Zusatztafel_ausgenommen_Lieferverkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_landwirtschaftlicher_Verkehr"/>
+        <supplementary id="Zusatztafel_ausgenommen_forstwirtschaftlicher_Verkehr"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.7e" name="Hazardous cargo prohibited" de.name="Verbot für kennzeichnungspflichtige Kraftfahrzeuge mit gefährlichen Gütern"
             wiki="Key:hazmat" 
             de.wiki="DE:Key:hazmat">
         <tag key="hazmat" value="no" ident="mode"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.9c[$val]" icon="AT_52_9c" name="Weight limit" de.name="Tatsächliches Gewicht"
             wiki="Key:maxweight">
         <tag key="maxweight" value="$val"/>
         <parameter ident="val" input="textfield" default="5.5" suffix="t" field_width="3"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.9d[$val]" icon="AT_52_9d" name="Axle weight limit" de.name="Tatsächliche Achslast"
             wiki="Key:maxaxleload">
         <tag key="maxaxleload" value="$val"/>
         <parameter ident="val" input="textfield" default="8" suffix="t" field_width="3"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.9a[$val]" icon="AT_52_9a" name="Width limit" de.name="Tatsächliche Breite"
             wiki="Key:maxwidth">
         <tag key="maxwidth" value="$val"/>
         <parameter ident="val" input="textfield" default="2" suffix="m" field_width="3"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.9b[$val]" icon="AT_52_9b" name="Height limit" de.name="Tatsächliche Höhe"
@@ -228,6 +271,7 @@ roadsigns plugin preset file for Austria
             de.wiki="DE:Key:maxheight">
         <tag key="maxheight" value="$val"/>
         <parameter ident="val" input="textfield" default="2.9" suffix="m" field_width="3"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.10a[$val]" icon="AT_52_10a" name="Speed limit" de.name="Zulässige Höchstgeschwindigkeit"
@@ -239,12 +283,14 @@ roadsigns plugin preset file for Austria
         <supplementary id="AT:54.g"/>
         <supplementary id="Zusatztafel_conditional"/>
         <supplementary id="Zusatztafel_hgv_conditional"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:52.11a[$val]" icon="AT_52_11a" name="Speed limit zone" de.name="Zone mit zulässiger Höchstgeschwindigkeit">
         <tag key="maxspeed" value="$val"/>
         <tag key="source:maxspeed" value="AT:zone:$val"/>
         <parameter ident="val" type="int" input="combo" editable="yes" text="speed-limit" de.text="Höchstgeschwindigkeit" suffix="km/h" values="20,30" default="30" field_width="2"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
     <sign ref="AT:50.7a" icon="AT_50_7a" traffic_sign_tag="" name="Incline" de.name="Steigung"
@@ -256,33 +302,34 @@ Positive Werte stehen für einen Anstieg in Richtung des ways und negative Werte
             de.wiki="DE:Key:incline">
         <tag key="incline" value="$val%"/>
         <parameter input="textfield" name="max. incline" de.name="Maximale Steigung" type="int" ident="val" default="10" suffix="%" field_width="3"/>
+        <supplementary id="Zusatztafel_Text"/>
     </sign>
 
-    <sign ref="Zustatztafel_ausgenommen_Anrainerverkehr" supplementary="yes" name="except for access" de.name="ausgenommen Anrainerverkehr">
+    <sign id="Zusatztafel_ausgenommen_Anrainerverkehr" supplementary="yes" name="except for access" de.name="ausgenommen Anrainerverkehr">
         <tag tag_ref="mode" append_value="destination"/>
     </sign>
 
-    <sign ref="Zustatztafel_ausgenommen_Radfahrer" supplementary="yes" name="Bicycles allowed" de.name="ausgenommen Radfahrer">
+    <sign id="Zusatztafel_ausgenommen_Radfahrer" supplementary="yes" name="Bicycles allowed" de.name="ausgenommen Radfahrer">
         <tag key="bicycle" value="yes"/>
     </sign>
 
-    <sign ref="Zustatztafel_ausgenommen_Linienbusse" supplementary="yes" name="Bus allowed" de.name="ausgenommen Linienbusse">
+    <sign id="Zusatztafel_ausgenommen_Linienbusse" supplementary="yes" name="Bus allowed" de.name="ausgenommen Linienbusse">
         <tag key="bus" value="yes"/>
     </sign>
 
-    <sign ref="Zustatztafel_ausgenommen_Taxi" supplementary="yes" name="Taxi allowed" de.name="ausgenommen Taxi">
+    <sign id="Zusatztafel_ausgenommen_Taxi" supplementary="yes" name="Taxi allowed" de.name="ausgenommen Taxi">
         <tag key="taxi" value="yes"/>
     </sign>
 
-    <sign ref="Zustatztafel_ausgenommen_Lieferverkehr" supplementary="yes" name="Delivery vehicles allowed" de.name="ausgenommen Lieferverkehr">
+    <sign id="Zusatztafel_ausgenommen_Lieferverkehr" supplementary="yes" name="Delivery vehicles allowed" de.name="ausgenommen Lieferverkehr">
         <tag tag_ref="mode" append_value="delivery"/>
     </sign>
 
-    <sign ref="Zustatztafel_ausgenommen_landwirtschaftlicher_Verkehr" supplementary="yes" name="Agricultural vehicles allowed" de.name="ausgenommen Landwirtschaftlicher Verkehr">
+    <sign id="Zusatztafel_ausgenommen_landwirtschaftlicher_Verkehr" supplementary="yes" name="Agricultural vehicles allowed" de.name="ausgenommen Landwirtschaftlicher Verkehr">
         <tag tag_ref="mode" append_value="agricultural"/>
     </sign>
 
-    <sign ref="Zustatztafel_ausgenommen_forstwirtschaftlicher_Verkehr" supplementary="yes" name="Forestry vehicles allowed" de.name="ausgenommen Forstwirtschaftlicher Verkehr">
+    <sign id="Zusatztafel_ausgenommen_forstwirtschaftlicher_Verkehr" supplementary="yes" name="Forestry vehicles allowed" de.name="ausgenommen Forstwirtschaftlicher Verkehr">
         <tag tag_ref="mode" append_value="forestry"/>
     </sign>
 
@@ -296,7 +343,7 @@ Positive Werte stehen für einen Anstieg in Richtung des ways und negative Werte
         <tag tag_ref="restriction" append_value="$val @ (wet)"/>
     </sign>
 
-    <sign ref="Zusatztafel_hgv_conditional" supplementary="yes" name="conditional hgv restriction" de.name="Bedingte LKW Beschränkung"
+    <sign id="Zusatztafel_hgv_conditional" supplementary="yes" name="conditional hgv restriction" de.name="Bedingte LKW Beschränkung"
         wiki="Conditional_restrictions"
         de.wiki="DE:Conditional_restrictions">
         <tag tag_ref="restriction" condition="hgv:conditional"/>
@@ -304,11 +351,18 @@ Positive Werte stehen für einen Anstieg in Richtung des ways und negative Werte
         <parameter input="textfield" name="hgv_conditional" de.name="hgv_conditional" type="text" ident="hgv_condition" default="weight>7.5 AND 22:00-05:00" suffix="" field_width="20"/>
     </sign>
 
-    <sign ref="Zusatztafel_conditional" supplementary="yes" name="conditional restriction" de.name="Bedingte Beschränkung"
+    <sign id="Zusatztafel_conditional" supplementary="yes" name="conditional restriction" de.name="Bedingte Beschränkung"
         wiki="Conditional_restrictions"
         de.wiki="DE:Conditional_restrictions">
         <tag tag_ref="restriction" condition="conditional"/>
-        <tag tag_ref="restriction" append_value="$val @ ($condition)"/>        
+        <tag tag_ref="restriction" append_value="$val @ ($condition)"/>
         <parameter input="textfield" name="conditional" de.name="conditional" type="text" ident="condition" default="Mo-Sa 05:00-22:00;PH off" suffix="" field_width="20"/>
+    </sign>
+
+    <sign ref="AT:54[$text]" id="Zusatztafel_Text" supplementary="yes" icon="Zusatztafel_text" name="supplementary text" de.name="Zusatztafel Text"
+        de.help="Speichert den genauen Text der Zusatz Tafel unter traffic_sign. Die entsprechenden Tags müssen extra gesetzt werden!
+Wie bei allen anderen Schildern auch, muss dazu die Option 'traffic_sign Merkmal' aktiviert sein.
+Bei den anderen Zusatztafeln wird ansonsten, mit Ausnahme der im Gesetz definierten symbolischen Zusatztafeln 'Bei Schneelage oder Eisbildung' und 'Bei nasser Fahrbahn', kein traffic_sign-Wert gesetzt.">
+        <parameter input="textfield" name="text" de.name="text" type="text" ident="text" default="" suffix="" field_width="20"/>
     </sign>
 </roadsignpreset>
