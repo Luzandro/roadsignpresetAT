@@ -131,12 +131,29 @@ roadsigns plugin preset file for Austria
         <parameter ident="val" input="textfield" suffix="km/h" default="20" field_width="2"/>
         <supplementary id="Zusatztafel_Text"/>
     </sign>
-
+    
     <sign ref="AT:52.19[$val]" icon="AT_52_19" name="Minimum speed limit (AT:52.19)" de.name="Vorgeschriebene Mindestgeschwindigkeit (AT:52.19)"
             wiki="Key:minspeed">
         <tag key="minspeed" value="$val"/>
         <parameter ident="val" input="textfield" suffix="km/h" default="30" field_width="2"/>
         <supplementary id="Zusatztafel_Text"/>
+    </sign>
+    
+    <sign ref="AT:WVO_F.1" name="Treppelweg (AT:WVO_F.1)" de.name="Treppelweg (AT:WVO_F.1)" 
+        de.help="Treppelwege sind in der Wasserstraßen-Verkehrsordnung geregelt und in erster Linie zu Zwecken der Schifffahrt angelegt. 
+            Zumeist daher highway=track + tracktype=grade1, in seltenen Fällen auch highway=path. 
+            Beachte auch die quadratischen Zusatztafeln für die Berechtigungen für Radfahrer und Rollstuhlfahrer."
+        de.wiki="Treppelweg">
+        <tag key="highway" value="track"/>
+        <tag key="motor_vehicle" value="private"/>
+        <tag key="description" value="Treppelweg"/>
+        <tag key="inline_skates" value="no"/>
+        <tag key="bicycle" value="yes"/>
+        <supplementary id="Zusatztafel_Text"/>
+        <supplementary id="WVO_F.3.1"/>
+        <supplementary id="WVO_F.3.2"/>
+        <supplementary id="WVO_F.4.1"/>
+        <supplementary id="WVO_F.4.2"/>
     </sign>
 
     <sign ref="AT:52.1" name="All vehicles prohibited (AT:52.1)" de.name="Verbot für Fahrzeuge aller Art (AT:52.1)">
@@ -306,13 +323,17 @@ Positive Werte stehen für einen Anstieg in Richtung des ways und negative Werte
         <supplementary id="Zusatztafel_Text"/>
     </sign>
 
-    <sign ref="AT:FKV_1.2" icon="AT_FKV_1_2" name="Forest area with permanent ban on access" de.name="Forstliches Sperrgebiet">
+    <sign ref="AT:FKV_1.2" icon="AT_FKV_1_2" name="Forest area with permanent ban on access (AT:FKV_1.2)" de.name="Forstliches Sperrgebiet (AT:FKV_1.2)">
         <tag key="access" value="forestry"/>
     </sign>
 
-    <sign ref="AT:FKV_1.3" icon="AT_FKV_1_3" name="Forest area with temporary ban on access" de.name="Befristetes Forstliches Sperrgebiet">
+    <sign ref="AT:FKV_1.3" icon="AT_FKV_1_3" name="Forest area with temporary ban on access (AT:FKV_1.3)" de.name="Befristetes Forstliches Sperrgebiet (AT:FKV_1.3)">
         <tag key="access:conditional" value="forestry @ $condition"/>
         <parameter input="textfield" name="conditional" de.name="conditional" type="text" ident="condition" default="2024 May 01 - 2024 Oct 01" suffix="" field_width="20"/>
+    </sign>
+    
+    <sign ref="AT:FKV_1.8" icon="AT_FKV_1_8" name="Permission to use forest roads or other paths in the forest by cyclists (AT:FKV_1.8)" de.name="Zulässigkeit der allgemeinen Benützung von Forststraßen oder sonstigen Wegen im Wald durch Radfahrer (AT:FKV_1.8)">
+        <tag key="bicycle" value="yes"/>
     </sign>
 
     <sign id="jagdliches_Sperrgebiet" icon="jagdliches_Sperrgebiet" name="Hunting area with permanent ban on access" de.name="Jagdliches Sperrgebiet">
@@ -391,5 +412,26 @@ Positive Werte stehen für einen Anstieg in Richtung des ways und negative Werte
         de.help="Speichert den genauen Text der Zusatz Tafel unter traffic_sign. Die entsprechenden Tags müssen extra gesetzt werden!
 Wie bei allen anderen Schildern auch, muss dazu die Option 'traffic_sign Merkmal' aktiviert sein.">
         <parameter input="textfield" name="text" de.name="text" type="text" ident="text" default="" suffix="" field_width="20"/>
+    </sign>
+    
+    <sign ref="WVO_F.3.1" supplementary="yes" name="Supplementary sign for Treppelweg: Cycling permitted (AT:WVO_F.3.1)" de.name="Treppelweg-Zusatztafel Radfahren erlaubt (AT:WVO_F.3.1)" 
+        de.help="Zusatztafel für Treppelwege - nicht zu verwechseln mit Radweg ohne Benützungspflicht (AT:53.27)"
+        de.wiki="Treppelweg">
+        <tag key="bicycle" value="designated"/>
+    </sign>
+    
+    <sign ref="WVO_F.3.2" supplementary="yes" name="Supplementary sign for Treppelweg: Cycling forbidden (AT:WVO_F.3.2)" de.name="Treppelweg-Zusatztafel Radfahren verboten (AT:WVO_F.3.2)"
+        de.wiki="Treppelweg">
+        <tag key="bicycle" value="no"/>
+    </sign>
+    
+    <sign ref="WVO_F.4.1" supplementary="yes" name="Supplementary sign for Treppelweg: Roller skating permitted  (AT:WVO_F.4.1)" de.name="Treppelweg-Zusatztafel Rollschuhfahren erlaubt (AT:WVO_F.4.1)"
+        de.wiki="Treppelweg">
+        <tag key="inline_skates" value="designated"/>
+    </sign>
+    
+    <sign ref="WVO_F.4.2" supplementary="yes" name="Supplementary sign for Treppelweg: Roller skating forbidden (AT:WVO_F.4.2)" de.name="Treppelweg-Zusatztafel Rollschuhfahren verboten (AT:WVO_F.4.2)"
+        de.wiki="Treppelweg">
+        <tag key="inline_skates" value="no"/>
     </sign>
 </roadsignpreset>
