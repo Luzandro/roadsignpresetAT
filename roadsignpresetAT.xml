@@ -37,7 +37,7 @@ roadsigns plugin preset file for Austria
         help="Mandatory use can be specified as a restriction on the corresponding road, see:"
         de.help="Benutzungspflicht kann als Einschränkung an der entsprechenden Straße angegeben werden, siehe:"
         wiki="Tag:bicycle%3Duse_sidepath">
-        <tag key="highway" value="path"/>
+        <tag key="highway" value="cycleway"/>
         <tag key="foot" value="designated"/>
         <tag key="bicycle" value="designated"/>
         <tag key="segregated" value="no"/>
@@ -49,7 +49,7 @@ roadsigns plugin preset file for Austria
         help="Differs from pedestrian &amp; bicycle paths WITH mandatory use by the lack of restrictions on the corresponding roads, see:"
         de.help="Unterscheidet sich von Geh- und Radwegen MIT Benutzungspflicht durch die fehlende Einschränkung an den entsprechenden Straßen, siehe:"
         wiki="Tag:bicycle%3Duse_sidepath">
-        <tag key="highway" value="path"/>
+        <tag key="highway" value="cycleway"/>
         <tag key="foot" value="designated"/>
         <tag key="bicycle" value="designated"/>
         <tag key="segregated" value="no"/>
@@ -61,7 +61,7 @@ roadsigns plugin preset file for Austria
         help="Mandatory use can be specified as a restriction on the corresponding road, see:"
         de.help="Benutzungspflicht kann als Einschränkung an der entsprechenden Straße angegeben werden, siehe:"
         wiki="Tag:bicycle%3Duse_sidepath">
-        <tag key="highway" value="path"/>
+        <tag key="highway" value="cycleway"/>
         <tag key="foot" value="designated"/>
         <tag key="bicycle" value="designated"/>
         <tag key="segregated" value="yes"/>
@@ -73,7 +73,7 @@ roadsigns plugin preset file for Austria
         help="Differs from split pedestrian &amp; bicycle paths WITH mandatory use by the lack of restrictions on the corresponding roads, see:"
         de.help="Unterscheidet sich von getrennten Geh- und Radwegen MIT Benutzungspflicht durch die fehlende Einschränkung an den entsprechenden Straßen, siehe:"
         wiki="Tag:bicycle%3Duse_sidepath">
-        <tag key="highway" value="path"/>
+        <tag key="highway" value="cycleway"/>
         <tag key="foot" value="designated"/>
         <tag key="bicycle" value="designated"/>
         <tag key="segregated" value="yes"/>
