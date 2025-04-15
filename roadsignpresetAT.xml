@@ -311,11 +311,11 @@ roadsigns plugin preset file for Austria
         <supplementary id="Zusatztafel_Text"/>
     </sign>
 
-    <sign ref="AT:50.7a" icon="AT_50_7a" traffic_sign_tag="" name="Incline (AT:50.7a)" de.name="Steigung (AT:52.7a)"
-            help="Applies for the road section with steep incline. (Split the way at the ends of the steep section.) 
-Positive values indicate movement upward in the direction of the (osm) way and negative values indicate movement downwards in the direction of the way."
-            de.help="Gilt für das Streckenstück mit hoher Steigung. (Weg am Anfang und Ende des steilen Abschnittes auftrennen.) 
-Positive Werte stehen für einen Anstieg in Richtung des ways und negative Werte für einen Abfall in Richtung des ways."
+    <sign ref="AT:50.7a" icon="AT_50_7a" traffic_sign_tag="" name="Decline / Incline (AT:50.7 / AT:50.7a)" de.name="Gefälle / Steigung (AT:50.7 / AT:50.7a)"
+            help="Applies for the road section with steep incline (Split the way at the ends of the steep section). 
+Positive values indicate movement upward IN THE DIRECTION OF THE (OSM) WAY and negative values indicate movement downwards in the direction of the way. As depending on the direction decline (AT:52.7) or incline (AT:52.7a) is signposted, none of the values is set automatically for traffic_sign. You could specify these separately with traffic_sign:forward and traffic_sign:backward."
+            de.help="Gilt für das Streckenstück mit hoher Steigung (Weg am Anfang und Ende des steilen Abschnittes auftrennen). 
+Positive Werte stehen für einen Anstieg IN RICHTUNG DES (OSM) WAYS und negative Werte für einen Abfall in Richtung des ways. Es wird kein traffic_sign-Wert automatisch gesetzt, da je nach Richtung ein Gefälle (AT:52.7) oder eine Steigung (AT:52.7a) beschildert ist. Man könnte diese mit traffic_sign:forward und traffic_sign:backward getrennt angegeben."
             wiki="Key:incline"
             de.wiki="DE:Key:incline">
         <tag key="incline" value="$val%"/>
