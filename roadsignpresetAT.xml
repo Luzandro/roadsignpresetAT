@@ -306,7 +306,7 @@ roadsigns plugin preset file for Austria
         <supplementary id="Zusatztafel_Text"/>
     </sign>
 
-    <sign ref="AT:52.11a[$val]" icon="AT_52_11a" name="Speed limit zone (AT:52.11a)" de.name="Zone mit zulässiger Höchstgeschwindigkeit (AT:52.11a)">
+    <sign ref="AT:52.11a[52.10a[$val]]" icon="AT_52_11a" name="Speed limit zone (AT:52.11a)" de.name="Zone mit zulässiger Höchstgeschwindigkeit (AT:52.11a)">
         <tag key="maxspeed" value="$val"/>
         <tag key="maxspeed:type" value="AT:zone$val"/>
         <parameter ident="val" type="int" input="combo" editable="yes" text="speed-limit" de.text="Höchstgeschwindigkeit" suffix="km/h" values="20,30" default="30" field_width="2"/>
