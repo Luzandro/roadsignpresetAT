@@ -211,7 +211,7 @@ roadsigns plugin preset file for Austria
     <sign ref="AT:52.7a-3[$val]" icon="AT_52_7a-3" name="Heavy goods vehicles exceeding specified length prohibited (AT:52.7a-3)" de.name="Verbot für LKW über angegebener Länge (AT:52.7a-3)"
         wiki="Key:maxlength"
         de.wiki="DE:Key:maxlength">
-        <tag key="maxlength" value="$val"/>
+        <tag key="maxlength:hgv" value="$val"/>
         <parameter input="textfield" name="max. length" de.name="Maximale Länge" type="float" ident="val" default="10" suffix="m" field_width="3"/>
         <supplementary id="Zusatztafel_Text"/>
     </sign>
