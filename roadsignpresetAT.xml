@@ -244,8 +244,8 @@ roadsigns plugin preset file for Austria
     </sign>
 
     <sign ref="AT:52.6c" name="Motor vehicles prohibited (AT:52.6c)" de.name="Verbot für Kraftfahrzeuge (AT:52.6c)"
-        long_name="Motorcycles, also with sidecar, mopeds, mofas as well as motorcars and other multi-track motorized vehicles prohibited"
-        de.long_name="Verbot für Krafträder, auch mit Beiwagen, Kleinkrafträder und Mofas sowie für Kraftwagen und sonstige mehrspurige Kraftfahrzeuge">
+        long_name="Motorcycles, also with sidecar, mopeds, mofas as well as motorcars and other multi-track motorized vehicles prohibited (AT:52.6c)"
+        de.long_name="Verbot für Krafträder, auch mit Beiwagen, Kleinkrafträder und Mofas sowie für Kraftwagen und sonstige mehrspurige Kraftfahrzeuge (AT:52.6c)">
         <tag key="motor_vehicle" value="no" ident="mode"/>
         <supplementary id="Zusatztafel_ausgenommen_Anrainerverkehr"/>
         <supplementary id="Zusatztafel_ausgenommen_Linienbusse"/>
