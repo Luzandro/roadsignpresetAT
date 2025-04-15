@@ -105,8 +105,7 @@ roadsigns plugin preset file for Austria
         <tag key="highway" value="living_street"/>
         <tag key="motor_vehicle" value="yes" />
         <tag key="motor_vehicle:conditional" value="private @ ($condition)" />
-        <tag key="maxspeed:conditional" value="5 @ ($condition)" />
-        <tag key="maxspeed:conditional:type" value="AT:walk" />
+        <tag key="maxspeed:conditional" value="walk @ ($condition)" />
         <parameter input="textfield" name="conditional" de.name="conditional" type="text" ident="condition" default="Mo-Fr 07:00-09:00, 11:30-13:00; PH off; SH off" suffix="" field_width="20"/>
         <supplementary id="Zusatztafel_Text"/>
     </sign>
@@ -117,8 +116,7 @@ roadsigns plugin preset file for Austria
         <tag key="highway" value="living_street"/>
         <tag key="vehicle" value="destination" />
         <tag key="bicycle" value="yes" />
-        <tag key="maxspeed" value="5" />
-        <tag key="maxspeed:type" value="AT:walk"/>
+        <tag key="maxspeed" value="walk" />
         <supplementary id="Zusatztafel_Text"/>
     </sign>
     
