@@ -12,7 +12,7 @@ roadsigns plugin preset file for Austria
         <supplementary id="Zusatztafel_Text"/>
     </sign>
 
-    <sign ref="AT:52.27" name="Bicycle path without mandatory use (AT:52.27)" de.name="Radweg ohne Benutzungspflicht (AT:52.27)"
+    <sign ref="AT:53.27" name="Bicycle path without mandatory use (AT:53.27)" de.name="Radweg ohne Benutzungspflicht (AT:53.27)"
         help="Differs from bicycle paths WITH mandatory use by the lack of restrictions on the corresponding roads, see:"
         de.help="Unterscheidet sich von Radwegen MIT Benutzungspflicht durch die fehlende Einschränkung an den entsprechenden Straßen, siehe:"
         wiki="Tag:bicycle%3Duse_sidepath">
@@ -45,7 +45,7 @@ roadsigns plugin preset file for Austria
         <supplementary id="Zusatztafel_Text"/>
     </sign>
 
-    <sign ref="AT:52.28a" name="Pedestrian &amp; bicycle path without mandatory use (AT:52.28a)" de.name="Gemeinsamer Geh- und Radweg ohne Benutzungspflicht (AT:52.28a)"
+    <sign ref="AT:53.28a" name="Pedestrian &amp; bicycle path without mandatory use (AT:53.28a)" de.name="Gemeinsamer Geh- und Radweg ohne Benutzungspflicht (AT:53.28a)"
         help="Differs from pedestrian &amp; bicycle paths WITH mandatory use by the lack of restrictions on the corresponding roads, see:"
         de.help="Unterscheidet sich von Geh- und Radwegen MIT Benutzungspflicht durch die fehlende Einschränkung an den entsprechenden Straßen, siehe:"
         wiki="Tag:bicycle%3Duse_sidepath">
@@ -69,7 +69,7 @@ roadsigns plugin preset file for Austria
         <supplementary id="Zusatztafel_Text"/>
     </sign>
 
-    <sign ref="AT:52.28b" name="Split pedestrian &amp; bicycle path without mandatory use (AT:52.28b)" de.name="Getrennter Rad- und Gehweg ohne Benutzungspflicht (AT:52.28b)"
+    <sign ref="AT:53.28b" name="Split pedestrian &amp; bicycle path without mandatory use (AT:53.28b)" de.name="Getrennter Rad- und Gehweg ohne Benutzungspflicht (AT:53.28b)"
         help="Differs from split pedestrian &amp; bicycle paths WITH mandatory use by the lack of restrictions on the corresponding roads, see:"
         de.help="Unterscheidet sich von getrennten Geh- und Radwegen MIT Benutzungspflicht durch die fehlende Einschränkung an den entsprechenden Straßen, siehe:"
         wiki="Tag:bicycle%3Duse_sidepath">
